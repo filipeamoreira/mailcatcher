@@ -11,5 +11,5 @@ RUN apt-get install -y --no-install-recommends sqlite3 libsqlite3-0 libsqlite3-d
 
 EXPOSE 1025 1080
 
-ENTRYPOINT ["mailcatcher", "--foreground"]
-CMD ["--ip", "0.0.0.0"]
+# ENTRYPOINT ["mailcatcher", "--foreground"]
+# CMD ["--ip", "0.0.0.0"]
