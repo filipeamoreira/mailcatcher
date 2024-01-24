@@ -6,7 +6,7 @@ MAINTAINER Samuel Cochran <sj26@sj26.com>
 ARG VERSION=0.9.0
 
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends sqlite3 libsqlite3-0 libsqlite3-dev && \
+RUN apt-get install -y --no-install-recommends libsqlite3-0 libsqlite3-dev && \
     gem install mailcatcher -v "$VERSION"
 
 EXPOSE 1025 1080
