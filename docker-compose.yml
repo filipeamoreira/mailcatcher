@@ -1,0 +1,22 @@
+version: "3.8"
+x-service_hostnames:
+  &default-hostnames
+  RACK_ENV: development
+  AWS_REGION: us-east-1
+
+services:
+  smtp-mock:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c "mailcatcher --foreground --ip 0.0.0.0 --smtp-port 1025 --http-port 1080"
+    environment: *default-hostnames
+    ports:
+      - 1080:1080
+      - 1025:1025
+    networks:
+      - nbuild-ecosystem
+
+networks:
+  nbuild-ecosystem:
+    name: nbuild-ecosystem
